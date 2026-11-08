@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# POS Nest Frontend — Interfaz del sistema de punto de venta
 
-## Getting Started
+Interfaz web del sistema de punto de venta, construida con **Next.js** y **TypeScript**. Consume la API REST de [pos-nest-backend](https://github.com/developer-ortega/pos-nest-backend) (NestJS + PostgreSQL + Cloudinary).
 
-First, run the development server:
+> Proyecto de práctica **en desarrollo**. Este README se actualiza a medida que avanza.
+
+## Stack
+
+| Capa | Tecnología |
+|------|------------|
+| Framework | Next.js (App Router), React, TypeScript |
+| Estilos | Tailwind CSS |
+| API | [pos-nest-backend](https://github.com/developer-ortega/pos-nest-backend) (REST) |
+
+## Requisitos
+
+- Node.js 22 o superior
+- La API [pos-nest-backend](https://github.com/developer-ortega/pos-nest-backend) corriendo en local
+
+## Cómo ejecutarlo
+
+1. Clonar e instalar:
+   ```bash
+   git clone https://github.com/developer-ortega/pos-nest-frontend.git
+   cd pos-nest-frontend
+   npm install
+   ```
+
+2. Crear el archivo `.env.local` a partir del ejemplo:
+   ```bash
+   cp .env.example .env.local
+   ```
+
+3. Iniciar en modo desarrollo:
+   ```bash
+   npm run dev
+   ```
+
+La aplicación queda en `http://localhost:3000`. Si la API usa el mismo puerto, ejecuta uno de los dos en otro (por ejemplo la API en `4000`) y ajusta `NEXT_PUBLIC_API_URL`.
+
+## Variables de entorno
+
+| Variable | Descripción |
+|----------|-------------|
+| `NEXT_PUBLIC_API_URL` | URL base de la API (por ejemplo `http://localhost:4000`) |
+
+> **Nunca subas el `.env.local` ni claves al repositorio.** Solo se versiona `.env.example`.
+
+## Scripts
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev     # Desarrollo
+npm run build   # Build de producción
+npm run start   # Ejecuta el build
+npm run lint    # Linter
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estado
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [x] Proyecto base con Next.js y TypeScript
+- [ ] Conexión con la API
+- [ ] Catálogo de productos
+- [ ] Carrito y registro de ventas
+- [ ] Despliegue
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Autor
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Renato Ortega** · [GitHub](https://github.com/developer-ortega) · [LinkedIn](https://www.linkedin.com/in/renato-ortega-dev/)
