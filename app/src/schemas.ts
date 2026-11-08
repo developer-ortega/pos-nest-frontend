@@ -5,8 +5,7 @@ export const ProductSchema = z.object({
     name: z.string(),
     image: z.string(),
     price: z.coerce.number(),
-    inventory: z.number(),
-    categoryId: z.number()
+    inventory: z.number()
 })
 
 export const CategorySchema = z.object({
@@ -17,3 +16,5 @@ export const CategorySchema = z.object({
 export const CategoryWithProductsResponseSchema = CategorySchema.extend({
     products: z.array(ProductSchema)
 });
+
+export type Product = z.infer<typeof ProductSchema>
