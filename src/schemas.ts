@@ -18,3 +18,5 @@ export const CategoryWithProductsResponseSchema = CategorySchema.extend({
 });
 
 export type Product = z.infer<typeof ProductSchema>
+
+export const CategoriesResponseSchema = z.array(CategorySchema)
